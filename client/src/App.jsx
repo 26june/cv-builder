@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
+import Profile from "./components/Profile";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -11,7 +12,12 @@ function App() {
 
   return (
     <>
-      {isAuthenticated && <LogoutButton />}
+      {isAuthenticated && (
+        <div>
+          <Profile></Profile>
+          <LogoutButton />
+        </div>
+      )}
       {!isAuthenticated && <LoginButton />}
     </>
   );
