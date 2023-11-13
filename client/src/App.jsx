@@ -17,14 +17,30 @@ function App() {
 
   return (
     <>
+
+<BrowserRouter>
+      <header>
       {isAuthenticated && (
-        <div className="Home">
+        <><div className="Home">
           {/* <Profile></Profile> */}
           <CvBuilder></CvBuilder>
           <HomeButton />
           <AboutButton />
           <LogoutButton />
         </div>
+
+              <Link to="/"> Home</Link>
+              <Link to="/about"> About</Link>
+              <Link to="/Profile"> Profile</Link>
+      </header>
+
+            <Routes>
+              {/* <Route path="/" element={<Home books={books} setBooks={setBooks} />} /> */}
+              <Route path="/about" element={<About />} />
+              <Route path="/book/:id" element={<Book />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+          </BrowserRouter>
       )}
       {!isAuthenticated && <LoginPage />}
     </>
