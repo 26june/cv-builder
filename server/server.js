@@ -1,4 +1,5 @@
 const cors = require("cors");
+const express = require("express");
 const mongoose = require("mongoose");
 const CV = require("./models/cv");
 require("dotenv").config();
@@ -33,7 +34,5 @@ app.get("/cvs", async (request, response) => {
 //   response.json(deletedCV);
 // });
 
-
 // Confirm port active
 app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));
-
