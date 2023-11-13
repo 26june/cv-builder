@@ -1,8 +1,6 @@
-const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const CV = require("./models/cv");
-const Test = require("./models/test");
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -17,9 +15,25 @@ app.get("/cvs", async (request, response) => {
   response.json(cvs);
 });
 
-app.get("/test", async (request, response) => {
-  const cvs = await Test.find(request.query);
-  response.json(test);
-});
+// //READ selected CV from database
+// app.get("/DATABASE_NAME/:id", async (request, response) => {
+//   const selectedCV = await CV.findById(request.params.id);
+//   response.json(selectedCV);
+// });
 
+// // UPDATE CV in database
+// app.put("/DATABASE_NAME:id", async (request, response) => {
+//   const updatedCV = await CV.findByIdAndUpdate(request.params.id, request.body);
+//   response.json(updatedCV);
+// });
+
+// // DELETE CV from database
+// app.delete("/DATABASE_NAME/:id", async (request, response) => {
+//   const deletedCV = await Movie.findByIdAndDelete(request.params.id);
+//   response.json(deletedCV);
+// });
+
+
+// Confirm port active
 app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));
+
