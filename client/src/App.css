@@ -1,11 +1,70 @@
-.paper {
-  background: #fff;
-  box-shadow:
-    /* The top layer shadow */ 0 1px 1px rgba(0, 0, 0, 0.15),
-    /* The second layer */ 0 10px 0 -5px #eee,
-    /* The second layer shadow */ 0 10px 1px -4px rgba(0, 0, 0, 0.15),
-    /* The third layer */ 0 20px 0 -10px #eee,
-    /* The third layer shadow */ 0 20px 1px -9px rgba(0, 0, 0, 0.15);
-  /* Padding for demo purposes */
-  padding: 30px;
+.LoginPage {
+  height: 100vh;
+  width: 100vw;
+  gap: 5vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home {
+  display: grid;
+
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.LogoutButton {
+  height: 5vh;
+  width: 5vw;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  justify-self: end;
+  margin-top: 1vh;
+  margin-right: 1vw;
+}
+
+.formContainer {
+  grid-area: 1/1/4/4;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.nextButton {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  height: 50%;
+  width: 50%;
+  justify-self: end;
+  margin-right: 1vw;
+  align-self: center;
+  z-index: 3;
+}
+
+.prevButton {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  height: 50%;
+  width: 50%;
+  justify-self: start;
+  margin-left: 1vw;
+  align-self: center;
+
+  z-index: 3;
+}
+
+.centreForm {
+  grid-area: 1/1/4/4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
