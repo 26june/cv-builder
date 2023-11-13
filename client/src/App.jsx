@@ -1,6 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginPage from "./components/LoginPage";
 import LogoutButton from "./components/LogoutButton";
+import AboutButton from "./components/AboutButton";
+import HomeButton from "./components/HomeButton";
+
 import Profile from "./components/Profile";
 import "./App.css";
 import CvBuilder from "./components/CvBuilder";
@@ -18,6 +21,8 @@ function App() {
         <div className="Home">
           {/* <Profile></Profile> */}
           <CvBuilder></CvBuilder>
+          <HomeButton />
+          <AboutButton />
           <LogoutButton />
         </div>
       )}
