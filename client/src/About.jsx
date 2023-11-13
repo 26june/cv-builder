@@ -3,7 +3,10 @@ export default function About() {
     <>
       <div>About</div>
       <p>Babtunde</p>
-      <p></p>
+      <p>
+        I am a reliable team player, I bring exceptional resourcefulness and a
+        knack for creative problem-solving to the table. Tech Educators Rock!!!
+      </p>
       <a href="https://github.com/tundealfred">Git hub</a>
       <p>GJ</p>
       <p>
