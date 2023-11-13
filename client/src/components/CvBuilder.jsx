@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import NameForm from "./Forms/NameForm";
 import SkillsForm from "./Forms/SkillsForm";
+import SummaryForm from "./Forms/SummaryForm";
+import EndForm from "./Forms/EndForm";
 
 export default function CvBuilder() {
   const [currentCV, setCurrentCV] = useState({
@@ -24,9 +26,14 @@ export default function CvBuilder() {
       return <NameForm nextStep={nextStep}></NameForm>;
 
     case 2:
+      return (
+        <SummaryForm nextStep={nextStep} prevStep={prevStep}></SummaryForm>
+      );
+
+    case 3:
       return <SkillsForm nextStep={nextStep} prevStep={prevStep}></SkillsForm>;
 
     default:
-      break;
+      return <EndForm setCurrentCV={setCurrentCV}></EndForm>;
   }
 }
