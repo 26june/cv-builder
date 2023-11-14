@@ -7,9 +7,14 @@ export default function EndForm({ setCurrentCV }) {
     });
   }
 
+  function handleGenerateCV() {
+    //TODO
+  }
+
   return (
     <div className="formContainer">
       <button onClick={handleReturn}>Reset</button>
+      <button onClick={handleGenerateCV}>Generate CV!</button>
     </div>
   );
 }

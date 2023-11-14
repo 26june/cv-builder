@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import React from "react";
 
 export default function SummaryForm({ nextStep, prevStep }) {
@@ -12,8 +13,21 @@ export default function SummaryForm({ nextStep, prevStep }) {
         Prev
       </button>
       <form className="centreForm" id="summaryForm" onSubmit={handleSubmit}>
-        <label htmlFor="summaryInput">Summary</label>
-        <input name="cvSummary" type="text" id="summaryInput" />
+        <TextField
+          id="standard-multiline-static"
+          label="Summary"
+          multiline
+          rows={5}
+          variant="outlined"
+          InputProps={{ style: { fontSize: "5vh" } }}
+          InputLabelProps={{
+            sx: {
+              fontSize: "5vh",
+              "&.MuiInputLabel-shrink": { top: -15 },
+            },
+          }}
+          sx={{ width: "50%" }}
+        />
       </form>
       <input
         className="nextButton"
