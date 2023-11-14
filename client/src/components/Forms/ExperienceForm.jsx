@@ -38,9 +38,8 @@ export default function ExperienceForm({ nextStep, prevStep }) {
             autoComplete="off"
             spellCheck="false"
             id="experienceTitle"
-            label="Experience"
+            label="Job Title"
             variant="standard"
-            placeholder="Job Title"
             InputProps={{ sx: { fontSize: "5vh", height: "7vh" } }}
             InputLabelProps={{
               sx: {
