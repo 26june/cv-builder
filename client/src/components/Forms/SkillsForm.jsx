@@ -11,6 +11,10 @@ export default function SkillsForm({ nextStep, prevStep }) {
   }
 
   function handleAddSkill() {
+    if (skillsInput == "") {
+      return;
+    }
+
     setSkillsArray([...skillsArray, skillsInput]);
     setSkillsInput("");
   }
