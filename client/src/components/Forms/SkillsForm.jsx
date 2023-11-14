@@ -1,10 +1,22 @@
-import { TextField } from "@mui/material";
-import React from "react";
+import { Button, TextField } from "@mui/material";
+import React, { useState } from "react";
 
 export default function SkillsForm({ nextStep, prevStep }) {
+  const [skillsArray, setSkillsArray] = useState([]);
+  const [skillsInput, setSkillsInput] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
     nextStep();
+  }
+
+  function handleAddSkill() {
+    setSkillsArray([...skillsArray, skillsInput]);
+    setSkillsInput("");
+  }
+
+  function handleDeleteSkill(skill) {
+    setSkillsArray(skillsArray.filter((e) => e !== skill));
   }
 
   return (
@@ -26,9 +38,33 @@ export default function SkillsForm({ nextStep, prevStep }) {
               "&.MuiInputLabel-shrink": { top: -50 },
             },
           }}
-          sx={{ width: "50%" }}
+          sx={{ width: "40%" }}
+          value={skillsInput}
+          onChange={(e) => setSkillsInput(e.target.value)}
         />
+        <Button
+          variant="outlined"
+          sx={{ height: "12vh", marginLeft: "1vw", width: "10%" }}
+          onClick={handleAddSkill}
+        >
+          Add
+        </Button>
       </form>
+
+      {skillsArray.map((skill, index) => {
+        return (
+          <div key={index}>
+            {skill}
+            <Button
+              onClick={() => {
+                handleDeleteSkill(skill);
+              }}
+            >
+              X
+            </Button>
+          </div>
+        );
+      })}
 
       <input
         className="nextButton"
