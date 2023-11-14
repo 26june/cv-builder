@@ -7,6 +7,7 @@ import HomeButton from "./components/HomeButton";
 import Profile from "./components/Profile";
 import "./App.css";
 import CvBuilder from "./components/CvBuilder";
+import { LinearProgress } from "@mui/material";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -23,6 +24,8 @@ function App() {
           <CvBuilder></CvBuilder>
           <HomeButton />
           <AboutButton />
+
+          <LinearProgress variant="determinate" value={100} />
           <LogoutButton />
         </div>
       )}

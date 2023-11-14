@@ -68,3 +68,17 @@
   justify-content: center;
   align-items: center;
 }
+
+.skillContainer {
+  grid-area: 2/1/4/4;
+  justify-self: center;
+  align-self: start;
+
+  margin-top: 25vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+}

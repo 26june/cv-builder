@@ -55,20 +55,22 @@ export default function SkillsForm({ nextStep, prevStep }) {
         </Button>
       </form>
 
-      {skillsArray.map((skill, index) => {
-        return (
-          <div key={index}>
-            {skill}
-            <Button
-              onClick={() => {
-                handleDeleteSkill(skill);
-              }}
-            >
-              X
-            </Button>
-          </div>
-        );
-      })}
+      <div className="skillContainer">
+        {skillsArray.map((skill, index) => {
+          return (
+            <div key={index}>
+              {skill}
+              <Button
+                onClick={() => {
+                  handleDeleteSkill(skill);
+                }}
+              >
+                X
+              </Button>
+            </div>
+          );
+        })}
+      </div>
 
       <input
         className="nextButton"
