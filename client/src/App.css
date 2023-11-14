@@ -96,3 +96,11 @@
   gap: 1vh;
   width: 50%;
 }
+
+#experienceHeader {
+  display: flex;
+  font-size: 5vh;
+  align-items: end;
+  justify-content: space-between;
+  width: 50%;
+}
