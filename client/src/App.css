@@ -81,4 +81,18 @@
   align-items: center;
   flex-wrap: wrap;
   width: 50%;
+
+  background-color: pink;
+}
+
+#experienceForm {
+  flex-direction: column;
+  gap: 2vh;
+}
+
+#dateContainer {
+  display: flex;
+  justify-content: start;
+  gap: 1vh;
+  width: 50%;
 }

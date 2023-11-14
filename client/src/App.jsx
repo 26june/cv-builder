@@ -24,8 +24,6 @@ function App() {
           <CvBuilder></CvBuilder>
           <HomeButton />
           <AboutButton />
-
-          <LinearProgress variant="determinate" value={100} />
           <LogoutButton />
         </div>
       )}
