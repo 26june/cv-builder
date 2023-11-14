@@ -17,6 +17,7 @@ export default function NameForm({ nextStep }) {
           id="outlined-basic"
           label="Name"
           variant="standard"
+          placeholder="Please Enter Your Name..."
           InputProps={{ sx: { fontSize: "7vh", height: "10vh" } }}
           InputLabelProps={{
             sx: {
