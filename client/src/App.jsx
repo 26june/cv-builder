@@ -21,10 +21,12 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        {isAuthenticated ? <LogOutButton /> : <LoginPage />}
-
-        <Link to="/Home"> Home</Link>
-        <Link to="/about"> About</Link>
+        <nav>
+          {isAuthenticated ? <LogOutButton /> : <LoginPage />}
+          <Link to="/Home"> Home</Link>
+          <Link to="/about"> About</Link>
+        </nav>
+        <img src="/images/CVlogo.png" alt="forge logo" id="logo" />
       </header>
 
       <Routes>
