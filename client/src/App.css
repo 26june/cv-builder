@@ -137,11 +137,6 @@ figure {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-figcaption {
-}
-
-body {
-  margin: 0;
-  font-family: "Noto Serif", serif;
-  background-image: url ();
+.picdisplay {
+  display: flex;
 }
