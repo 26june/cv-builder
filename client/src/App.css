@@ -105,10 +105,28 @@
   width: 50%;
 }
 
-About {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+#logo {
+  max-width: 64px;
+}
+
+figure {
   border: 1px solid black;
-  width: 25%;
-  height: 550px;
+  width: 20%;
+  margin: 2rem;
   text-align: center;
   margin-bottom: 2rem;
   display: flex;
@@ -117,4 +135,13 @@ About {
   padding: 10px;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+figcaption {
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif", serif;
+  background-image: url ();
 }
