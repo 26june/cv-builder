@@ -96,3 +96,25 @@
   gap: 1vh;
   width: 50%;
 }
+
+#experienceHeader {
+  display: flex;
+  font-size: 5vh;
+  align-items: end;
+  justify-content: space-between;
+  width: 50%;
+}
+
+About {
+  border: 1px solid black;
+  width: 25%;
+  height: 550px;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+}
