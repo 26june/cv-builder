@@ -5,7 +5,7 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <img src="/images/CVlogo.png" alt="forge logo" />
+      <img src="/images/CVlogo.png" alt="forge logo" id="logo" />
       <h1> Welcome to CVFORGE.COM </h1>
       <p>
         where you can design your own CV ready to apply for jobs. You will enter

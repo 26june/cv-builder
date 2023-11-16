@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 25px;
 }
 
 .Home {
@@ -172,4 +173,12 @@ figure {
 
   justify-content: center;
   align-items: center;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif", serif;
+  background-image: url("/images/Screenshot.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
