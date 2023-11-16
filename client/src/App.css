@@ -156,7 +156,6 @@ figure {
   grid-row: 1/4;
   height: 75vh;
   width: 75vw;
-  justify-self: center;
   align-self: center;
 
   display: flex;
@@ -181,4 +180,5 @@ body {
   background-image: url("/images/Screenshot.png");
   background-repeat: no-repeat;
   background-size: contain;
+  backdrop-filter: blur(10px);
 }
