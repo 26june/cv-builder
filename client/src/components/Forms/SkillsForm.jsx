@@ -1,12 +1,20 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 
-export default function SkillsForm({ nextStep, prevStep }) {
-  const [skillsArray, setSkillsArray] = useState([]);
+export default function SkillsForm({
+  nextStep,
+  prevStep,
+  currentCV,
+  setCurrentCV,
+}) {
+  const [skillsArray, setSkillsArray] = useState(currentCV.skills || []);
   const [skillsInput, setSkillsInput] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
+    setCurrentCV((current) => {
+      return { ...current, skills: skillsArray };
+    });
     nextStep();
   }
 

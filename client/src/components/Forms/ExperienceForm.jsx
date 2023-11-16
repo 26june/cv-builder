@@ -5,7 +5,12 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers";
 
-export default function ExperienceForm({ nextStep, prevStep }) {
+export default function ExperienceForm({
+  nextStep,
+  prevStep,
+  currentCV,
+  setCurrentCV,
+}) {
   const experienceDefault = {
     title: "",
     company: "",
@@ -14,12 +19,17 @@ export default function ExperienceForm({ nextStep, prevStep }) {
     description: "",
   };
   const [experience, setExperience] = useState(experienceDefault);
-  const [experienceArray, setExperienceArray] = useState([]);
+  const [experienceArray, setExperienceArray] = useState(
+    currentCV.experiences || []
+  );
 
   const { title, company, startDate, endDate, description } = experience;
 
   function handleSubmit(event) {
     event.preventDefault();
+    setCurrentCV((current) => {
+      return { ...current, experiences: experienceArray };
+    });
     nextStep();
   }
 

@@ -90,6 +90,12 @@
   gap: 2vh;
 }
 
+#educationForm,
+#contactForm {
+  flex-direction: column;
+  gap: 5vh;
+}
+
 #dateContainer {
   display: flex;
   justify-content: start;
@@ -103,6 +109,8 @@
   align-items: end;
   justify-content: space-between;
   width: 50%;
+
+  z-index: 4;
 }
 
 header {
