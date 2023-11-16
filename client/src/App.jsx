@@ -20,32 +20,25 @@ function App() {
 
   return (
     <BrowserRouter>
-      <header className="Header">
-        <nav>
-          {isAuthenticated ? <LogOutButton /> : <LoginPage />}
-          <Link to="/"> Home</Link>
-          <Link to="/about"> About</Link>
-        </nav>
-        <img src="/images/CVlogo.png" alt="forge logo" id="logo" />
-      </header>
+      {isAuthenticated && (
+        <div className="Home">
+          <header>
+            <nav>
+              {isAuthenticated ? <LogOutButton /> : <LoginPage />}
+              <Link to="/"> Home</Link>
+              <Link to="/about"> About</Link>
+            </nav>
+            <img src="/images/CVlogo.png" alt="forge logo" id="logo" />
+          </header>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              {isAuthenticated && (
-                <div className="Home">
-                  <CvBuilder></CvBuilder>
-                </div>
-              )}
-              {!isAuthenticated && <LoginPage />}
-            </>
-          }
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
+          <Routes>
+            <Route path="/" element={<CvBuilder></CvBuilder>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+      )}
+      {!isAuthenticated && <LoginPage />}
     </BrowserRouter>
   );
 }

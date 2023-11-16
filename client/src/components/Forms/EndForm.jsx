@@ -13,8 +13,10 @@ export default function EndForm({ setCurrentCV }) {
 
   return (
     <div className="formContainer">
-      <button onClick={handleReturn}>Reset</button>
-      <button onClick={handleGenerateCV}>Generate CV!</button>
+      <div className="centreEndButtons">
+        <button onClick={handleReturn}>Reset</button>
+        <button onClick={handleGenerateCV}>Generate CV!</button>
+      </div>
     </div>
   );
 }
