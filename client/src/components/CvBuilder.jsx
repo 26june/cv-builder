@@ -4,45 +4,104 @@ import SkillsForm from "./Forms/SkillsForm";
 import SummaryForm from "./Forms/SummaryForm";
 import EndForm from "./Forms/EndForm";
 import ExperienceForm from "./Forms/ExperienceForm";
+import EducationForm from "./Forms/EducationForm";
+import PreviousJobForm from "./Forms/PreviousJobForm";
+import ContactForm from "./Forms/ContactForm";
 
 export default function CvBuilder() {
-  const [currentCV, setCurrentCV] = useState({
+  const [currentStep, stepCurrentStep] = useState({
     step: 1,
   });
 
+  const [currentCV, setCurrentCV] = useState({});
+
   function nextStep() {
-    setCurrentCV((current) => {
-      return { ...current, step: current.step + 1 };
+    stepCurrentStep((current) => {
+      return { ...current, step: currentStep.step + 1 };
     });
   }
 
   function prevStep() {
-    setCurrentCV((current) => {
-      return { ...current, step: current.step - 1 };
+    stepCurrentStep((current) => {
+      return { ...current, step: currentStep.step - 1 };
     });
   }
 
-  switch (currentCV.step) {
+  switch (currentStep.step) {
     case 1:
-      return <NameForm nextStep={nextStep}></NameForm>;
+      return (
+        <NameForm
+          nextStep={nextStep}
+          currentCV={currentCV}
+          setCurrentCV={setCurrentCV}
+        ></NameForm>
+      );
 
     case 2:
       return (
-        <SummaryForm nextStep={nextStep} prevStep={prevStep}></SummaryForm>
+        <PreviousJobForm
+          nextStep={nextStep}
+          prevStep={prevStep}
+          currentCV={currentCV}
+          setCurrentCV={setCurrentCV}
+        ></PreviousJobForm>
       );
 
     case 3:
-      return <SkillsForm nextStep={nextStep} prevStep={prevStep}></SkillsForm>;
-
+      return (
+        <ContactForm
+          nextStep={nextStep}
+          prevStep={prevStep}
+          currentCV={currentCV}
+          setCurrentCV={setCurrentCV}
+        ></ContactForm>
+      );
     case 4:
+      return (
+        <SummaryForm
+          nextStep={nextStep}
+          prevStep={prevStep}
+          currentCV={currentCV}
+          setCurrentCV={setCurrentCV}
+        ></SummaryForm>
+      );
+
+    case 5:
+      return (
+        <SkillsForm
+          nextStep={nextStep}
+          prevStep={prevStep}
+          currentCV={currentCV}
+          setCurrentCV={setCurrentCV}
+        ></SkillsForm>
+      );
+
+    case 6:
       return (
         <ExperienceForm
           nextStep={nextStep}
           prevStep={prevStep}
+          currentCV={currentCV}
+          setCurrentCV={setCurrentCV}
         ></ExperienceForm>
       );
 
+    case 7:
+      return (
+        <EducationForm
+          nextStep={nextStep}
+          prevStep={prevStep}
+          currentCV={currentCV}
+          setCurrentCV={setCurrentCV}
+        ></EducationForm>
+      );
+
     default:
-      return <EndForm setCurrentCV={setCurrentCV}></EndForm>;
+      return (
+        <EndForm
+          stepCurrentStep={stepCurrentStep}
+          currentCV={currentCV}
+        ></EndForm>
+      );
   }
 }
