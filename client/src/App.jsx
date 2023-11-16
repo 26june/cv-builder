@@ -6,7 +6,14 @@ import HomeButton from "./components/HomeButton";
 
 import Profile from "./components/Profile";
 import "./App.css";
+import "./Template1.css";
+import "./Template2.css";
+import "./Template3.css";
 import CvBuilder from "./components/CvBuilder";
+import CVTemplates from "./templates/CVTemplates";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import DraggableList from "./DraggableList";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -17,34 +24,14 @@ function App() {
 
   return (
     <>
-
-<BrowserRouter>
-      <header>
-      {isAuthenticated && (
-        <><div className="Home">
-          {/* <Profile></Profile> */}
-          <CvBuilder></CvBuilder>
-          <HomeButton />
-          <AboutButton />
-          <LogoutButton />
-        </div>
-
-              <Link to="/"> Home</Link>
-              <Link to="/about"> About</Link>
-              <Link to="/Profile"> Profile</Link>
-      </header>
-
-            <Routes>
-              {/* <Route path="/" element={<Home books={books} setBooks={setBooks} />} /> */}
-              <Route path="/about" element={<About />} />
-              <Route path="/book/:id" element={<Book />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
-          </BrowserRouter>
-      )}
-      {!isAuthenticated && <LoginPage />}
+      <h1>traTemp-Branch</h1>
+      <h2>Template Examples</h2>
+      <div className="app">
+        <DndProvider backend={HTML5Backend}>
+          <CVTemplates />
+        </DndProvider>
+      </div>
     </>
   );
 }
-
 export default App;

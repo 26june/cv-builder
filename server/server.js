@@ -16,6 +16,8 @@ app.get("/cvs", async (request, response) => {
   response.json(cvs);
 });
 
+app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));
+
 // //READ selected CV from database
 // app.get("/DATABASE_NAME/:id", async (request, response) => {
 //   const selectedCV = await CV.findById(request.params.id);
@@ -35,4 +37,3 @@ app.get("/cvs", async (request, response) => {
 // });
 
 // Confirm port active
-app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));

@@ -1,0 +1,66 @@
+.template1 {
+  font-family: "Roboto", sans-serif;
+  background: #f2f2f2;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #007bff;
+}
+
+.header p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.profile h2 {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li {
+  background: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.experiences,
+.education,
+.references {
+  margin-bottom: 20px;
+}
+
+.experiences h2,
+.education h2,
+.references h2 {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.experiences div,
+.education div,
+.references div {
+  margin-bottom: 15px;
+}
