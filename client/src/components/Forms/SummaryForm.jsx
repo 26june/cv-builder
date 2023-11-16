@@ -29,6 +29,7 @@ export default function SummaryForm({
           label="Summary"
           multiline
           rows={5}
+          required
           variant="outlined"
           InputProps={{ style: { fontSize: "5vh" } }}
           InputLabelProps={{
@@ -36,6 +37,7 @@ export default function SummaryForm({
               fontSize: "5vh",
               "&.MuiInputLabel-shrink": { top: -15 },
             },
+            required: false,
           }}
           sx={{ width: "50%" }}
           value={currentSummary}
