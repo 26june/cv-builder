@@ -1,0 +1,17 @@
+.formAnim-enter {
+  opacity: 0;
+}
+
+.formAnim-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.formAnim-exit {
+  opacity: 1;
+}
+
+.formAnim-exit {
+  opacity: 0;
+  transition: opacity 200ms;
+}
