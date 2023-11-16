@@ -20,32 +20,32 @@ function App() {
 
   return (
     <BrowserRouter>
-      <header>
+      <header className="Header">
         <nav>
           {isAuthenticated ? <LogOutButton /> : <LoginPage />}
-          <Link to="/Home"> Home</Link>
+          <Link to="/"> Home</Link>
           <Link to="/about"> About</Link>
         </nav>
         <img src="/images/CVlogo.png" alt="forge logo" id="logo" />
       </header>
 
       <Routes>
-        {/* <Route path="/" element={<Home books={books} setBooks={setBooks} />} /> */}
+        <Route
+          path="/"
+          element={
+            <>
+              {isAuthenticated && (
+                <div className="Home">
+                  <CvBuilder></CvBuilder>
+                </div>
+              )}
+              {!isAuthenticated && <LoginPage />}
+            </>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-
-      <>
-        {isAuthenticated && (
-          <div className="Home">
-            {/* <Profile></Profile> */}
-            <CvBuilder></CvBuilder>
-            {/* <AboutButton />
-            <HomeButton /> */}
-          </div>
-        )}
-        {!isAuthenticated && <LoginPage />}
-      </>
     </BrowserRouter>
   );
 }

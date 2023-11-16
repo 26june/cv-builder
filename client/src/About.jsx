@@ -1,8 +1,6 @@
 export default function About() {
   return (
     <>
-      <div>About</div>
-
       <div className="picdisplay">
         <figure>
           <h3>Babtunde</h3>
