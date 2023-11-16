@@ -9,9 +9,10 @@ app.use(cors());
 const axios = require("axios");
 mongoose.connect(process.env.DATABASE_URL);
 
-// For OpanAI API
+//For OpanAI API
 const OpenAI = require("openai");
 const openai = new OpenAI();
+const bodyParser = require("body-parser");
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 app.get("/", (_, response) => response.json("Root route for cv-builder."));
@@ -40,27 +41,25 @@ app.get("/cvs", async (request, response) => {
 // });
 
 // Query ChatGPT for job advice
-const advice = async (req, res) => {
+app.use(bodyParser.json());
+app.post("/advice", async (req, res) => {
+  console.log(req.body);
   const completion = await openai.chat.completions.create({
     messages: [
       {
         role: "system",
         content: "You are a helpful assistant",
         role: "user",
-        content:
-          "List jobs I could do with these skills: data entry. Answer as a json array with the structure ['string']",
+        content: `Suggest jobs I could do with these skills: ${req.body}.`,
       },
     ],
     model: "gpt-3.5-turbo-1106",
-    response_format: { "type": "json_object" },
   });
 
-  const test = completion.choices[0].message.content;
-  console.log(test);
-  console.log(test.jobs);
-};
-// test advice function
-advice();
+  const advice = completion.choices[0].message.content;
+  console.log(advice);
+  res.json(advice);
+});
 
 // Confirm port active
 app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));

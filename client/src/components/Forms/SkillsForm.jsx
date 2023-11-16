@@ -1,6 +1,9 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 
+// Axios imported for handleAdvice
+import axios from "axios";
+
 export default function SkillsForm({
   nextStep,
   prevStep,
@@ -29,6 +32,12 @@ export default function SkillsForm({
 
   function handleDeleteSkill(skill) {
     setSkillsArray(skillsArray.filter((e) => e !== skill));
+  }
+
+  async function handleAdvice() {
+    const res = await axios.post("http://localhost:8080/advice", skillsArray);
+    console.log("Server response:", res.data);
+    alert(res.data);
   }
 
   return (
@@ -80,6 +89,15 @@ export default function SkillsForm({
         })}
       </div>
 
+      <div className="adviceButtonContainer">
+        <button
+          onClick={() => {
+            handleAdvice();
+          }}
+        >
+          Advice
+        </button>
+      </div>
       <input
         className="nextButton"
         type="submit"
