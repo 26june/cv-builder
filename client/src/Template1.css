@@ -1,0 +1,50 @@
+.template3 {
+  font-family: "Arial", sans-serif;
+  background-color: #808080;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: #ff0099;
+}
+
+.profile h2,
+.skills h2,
+.experiences h2,
+.education h2,
+.references h2 {
+  color: #ff0099;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills li {
+  background-color: #ff99cc;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.experiences,
+.education,
+.references {
+  margin-top: 20px;
+}
+
+.experiences h3,
+.education h3,
+.references p {
+  color: #ff0099;
+}

@@ -90,6 +90,12 @@
   gap: 2vh;
 }
 
+#educationForm,
+#contactForm {
+  flex-direction: column;
+  gap: 5vh;
+}
+
 #dateContainer {
   display: flex;
   justify-content: start;
@@ -103,12 +109,37 @@
   align-items: end;
   justify-content: space-between;
   width: 50%;
+
+  z-index: 4;
 }
 
-About {
+header {
+  grid-column: 1/4;
+  grid-row: 1/2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 0.5em 1em;
+
+  z-index: 3;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+#logo {
+  max-width: 64px;
+}
+
+figure {
   border: 1px solid black;
-  width: 25%;
-  height: 550px;
+  width: 20%;
+  margin: 2rem;
   text-align: center;
   margin-bottom: 2rem;
   display: flex;
@@ -117,4 +148,28 @@ About {
   padding: 10px;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.picdisplay {
+  grid-column: 1/4;
+  grid-row: 1/4;
+  height: 75vh;
+  width: 75vw;
+  justify-self: center;
+  align-self: center;
+
+  display: flex;
+}
+
+.centreEndButtons {
+  grid-column: 1/4;
+  grid-row: 1/4;
+
+  display: flex;
+  height: 100%;
+  width: 100%;
+  gap: 10vw;
+
+  justify-content: center;
+  align-items: center;
 }

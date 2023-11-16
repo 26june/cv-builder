@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function EndForm({ setCurrentCV }) {
+export default function EndForm({ stepCurrentStep, currentCV }) {
   function handleReturn() {
-    setCurrentCV((current) => {
-      return { current, step: 1 };
+    stepCurrentStep((current) => {
+      return { ...current, step: 1 };
     });
   }
 
@@ -13,8 +13,10 @@ export default function EndForm({ setCurrentCV }) {
 
   return (
     <div className="formContainer">
-      <button onClick={handleReturn}>Reset</button>
-      <button onClick={handleGenerateCV}>Generate CV!</button>
+      <div className="centreEndButtons">
+        <button onClick={handleReturn}>Reset</button>
+        <button onClick={handleGenerateCV}>Generate CV!</button>
+      </div>
     </div>
   );
 }
