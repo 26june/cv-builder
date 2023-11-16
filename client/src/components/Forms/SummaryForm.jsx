@@ -1,9 +1,20 @@
 import { TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-export default function SummaryForm({ nextStep, prevStep }) {
+export default function SummaryForm({
+  nextStep,
+  prevStep,
+  currentCV,
+  setCurrentCV,
+}) {
+  const [currentSummary, setCurrentSummary] = useState(currentCV.summary || "");
+
   function handleSubmit(event) {
     event.preventDefault();
+
+    setCurrentCV((current) => {
+      return { ...current, summary: currentSummary };
+    });
     nextStep();
   }
 
@@ -27,6 +38,8 @@ export default function SummaryForm({ nextStep, prevStep }) {
             },
           }}
           sx={{ width: "50%" }}
+          value={currentSummary}
+          onChange={(e) => setCurrentSummary(e.target.value)}
         />
       </form>
       <input
