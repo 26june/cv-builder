@@ -97,6 +97,11 @@ export default function CvBuilder() {
       );
 
     default:
-      return <EndForm stepCurrentStep={stepCurrentStep}></EndForm>;
+      return (
+        <EndForm
+          stepCurrentStep={stepCurrentStep}
+          currentCV={currentCV}
+        ></EndForm>
+      );
   }
 }

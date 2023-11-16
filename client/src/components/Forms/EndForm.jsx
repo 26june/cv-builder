@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function EndForm({ stepCurrentStep }) {
+export default function EndForm({ stepCurrentStep, currentCV }) {
   function handleReturn() {
     stepCurrentStep((current) => {
       return { ...current, step: 1 };
