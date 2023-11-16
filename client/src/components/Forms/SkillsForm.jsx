@@ -1,7 +1,8 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import Slide from "@mui/material/Slide";
 
-export default function SkillsForm({ nextStep, prevStep }) {
+export default function SkillsForm({ nextStep, prevStep, visibleBool }) {
   const [skillsArray, setSkillsArray] = useState([]);
   const [skillsInput, setSkillsInput] = useState("");
 
@@ -24,60 +25,62 @@ export default function SkillsForm({ nextStep, prevStep }) {
   }
 
   return (
-    <div className="formContainer">
-      <button className="prevButton" onClick={prevStep}>
-        Prev
-      </button>
-      <form className="centreForm" id="skillsForm" onSubmit={handleSubmit}>
-        <TextField
-          autoComplete="off"
-          spellCheck="false"
-          id="outlined-basic"
-          label="Skills"
-          variant="standard"
-          InputProps={{ sx: { fontSize: "7vh", height: "10vh" } }}
-          InputLabelProps={{
-            sx: {
-              fontSize: "7vh",
-              "&.MuiInputLabel-shrink": { top: -50 },
-            },
-          }}
-          sx={{ width: "40%" }}
-          value={skillsInput}
-          onChange={(e) => setSkillsInput(e.target.value)}
+    <Slide direction="left" in={visibleBool} mountOnEnter unmountOnExit>
+      <div className="formContainer">
+        <button className="prevButton" onClick={prevStep}>
+          Prev
+        </button>
+        <form className="centreForm" id="skillsForm" onSubmit={handleSubmit}>
+          <TextField
+            autoComplete="off"
+            spellCheck="false"
+            id="outlined-basic"
+            label="Skills"
+            variant="standard"
+            InputProps={{ sx: { fontSize: "7vh", height: "10vh" } }}
+            InputLabelProps={{
+              sx: {
+                fontSize: "7vh",
+                "&.MuiInputLabel-shrink": { top: -50 },
+              },
+            }}
+            sx={{ width: "40%" }}
+            value={skillsInput}
+            onChange={(e) => setSkillsInput(e.target.value)}
+          />
+          <Button
+            variant="outlined"
+            sx={{ height: "12vh", marginLeft: "1vw", width: "10%" }}
+            onClick={handleAddSkill}
+          >
+            Add
+          </Button>
+        </form>
+
+        <div className="skillContainer">
+          {skillsArray.map((skill, index) => {
+            return (
+              <div key={index}>
+                {skill}
+                <Button
+                  onClick={() => {
+                    handleDeleteSkill(skill);
+                  }}
+                >
+                  X
+                </Button>
+              </div>
+            );
+          })}
+        </div>
+
+        <input
+          className="nextButton"
+          type="submit"
+          value="Next"
+          form="skillsForm"
         />
-        <Button
-          variant="outlined"
-          sx={{ height: "12vh", marginLeft: "1vw", width: "10%" }}
-          onClick={handleAddSkill}
-        >
-          Add
-        </Button>
-      </form>
-
-      <div className="skillContainer">
-        {skillsArray.map((skill, index) => {
-          return (
-            <div key={index}>
-              {skill}
-              <Button
-                onClick={() => {
-                  handleDeleteSkill(skill);
-                }}
-              >
-                X
-              </Button>
-            </div>
-          );
-        })}
       </div>
-
-      <input
-        className="nextButton"
-        type="submit"
-        value="Next"
-        form="skillsForm"
-      />
-    </div>
+    </Slide>
   );
 }
