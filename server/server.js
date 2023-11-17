@@ -22,6 +22,7 @@ app.get("/cvs", async (request, response) => {
   response.json(cvs);
 });
 
+<<<<<<< HEAD
 // //READ selected CV from database
 // app.get("/DATABASE_NAME/:id", async (request, response) => {
 //   const selectedCV = await CV.findById(request.params.id);
@@ -62,4 +63,11 @@ app.post("/advice", async (req, res) => {
 });
 
 // Confirm port active
+=======
+app.post("/cvs", async (request, response) => {
+  const newCV = await CV.create(request.body);
+  response.json(newCV);
+});
+
+>>>>>>> 8cf0b2f964ab88151804ecfba7a2f728eae5c910
 app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));

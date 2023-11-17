@@ -10,6 +10,7 @@ import "./App.css";
 import About from "./About";
 import CvBuilder from "./components/CvBuilder";
 import { LinearProgress } from "@mui/material";
+import CVTemplates from "./templates/CVTemplates";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -35,6 +36,7 @@ function App() {
             <Route path="/" element={<CvBuilder></CvBuilder>} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/cv-templates" element={<CVTemplates />} /> */}
           </Routes>
         </div>
       )}
