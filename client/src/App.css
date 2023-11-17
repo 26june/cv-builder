@@ -121,7 +121,7 @@ header {
   justify-content: space-between;
   align-items: start;
   padding: 0.5em 1em;
-
+  pointer-events: none;
   z-index: 3;
 }
 
