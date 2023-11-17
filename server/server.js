@@ -16,23 +16,9 @@ app.get("/cvs", async (request, response) => {
   response.json(cvs);
 });
 
-// //READ selected CV from database
-// app.get("/DATABASE_NAME/:id", async (request, response) => {
-//   const selectedCV = await CV.findById(request.params.id);
-//   response.json(selectedCV);
-// });
+app.post("/cvs", async (request, response) => {
+  const newCV = await CV.create(request.body);
+  response.json(newCV);
+});
 
-// // UPDATE CV in database
-// app.put("/DATABASE_NAME:id", async (request, response) => {
-//   const updatedCV = await CV.findByIdAndUpdate(request.params.id, request.body);
-//   response.json(updatedCV);
-// });
-
-// // DELETE CV from database
-// app.delete("/DATABASE_NAME/:id", async (request, response) => {
-//   const deletedCV = await Movie.findByIdAndDelete(request.params.id);
-//   response.json(deletedCV);
-// });
-
-// Confirm port active
 app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));
